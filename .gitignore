@@ -1,1 +1,4 @@
 .vscode/
+main_2.c
+day1/*.out
+day2/*.out

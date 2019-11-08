@@ -23,11 +23,14 @@ node *distr(node *n1, node *n2)
     }
     else
     {
+        
         node *temp = malloc(sizeof(node));
         temp->ch = 'V';
         temp->left = n1;
         temp->right = n2;
         return temp;
+        
+
     }
     
 }
@@ -50,8 +53,10 @@ node *cnf(node *root)
     }
     else if(root->ch == 'V')
     {
-        
-        return distr(cnf(root->left),cnf(root->right));
+        node* temp1 = root->left;
+        node* temp2 = root->right;
+        free(root);
+        return distr(cnf(temp1),cnf(temp2));
     }
     
     
